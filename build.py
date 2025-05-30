@@ -91,6 +91,12 @@ def build(build_type):
             print(f"\n找到uv包管理工具: {uv_path}")
             use_uv = True
         
+        from shutil import which
+        if which('uv') is not None:
+            uv_path = which('uv')
+            print(f"\n找到uv包管理工具: {uv_path}")
+            use_uv = True
+        
         # 确定Python解释器路径
         python_exe = os.path.join('.venv', 'Scripts', 'python.exe') if os.name == 'nt' else os.path.join('.venv', 'bin', 'python')
         if not os.path.exists(python_exe):
