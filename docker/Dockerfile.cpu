@@ -1,4 +1,4 @@
-FROM astral/uv:python3.10-alpine
+FROM astral/uv:python3.11-trixie-slim
 
 ENV LANG=C.UTF-8 \
     LC_ALL=C.UTF-8 \
