@@ -1,10 +1,10 @@
-FROM astral/uv:python3.11-alpine
+FROM astral/uv:python3.10-alpine
 
 ENV LANG=C.UTF-8 \
     LC_ALL=C.UTF-8 \
     UV_COMPILE_BYTECODE=1 \
     UV_CACHE_DIR=/root/.cache/uv \
-    UV_PYTHON=python3.11
+    UV_PYTHON=python3.10
 
 RUN apk add --no-cache \
     ffmpeg \
