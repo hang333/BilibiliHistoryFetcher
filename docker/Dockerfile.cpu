@@ -16,17 +16,6 @@ WORKDIR /app
 
 COPY . .
 
-RUN set -eux; \
-    echo "== pwd =="; pwd; \
-    echo "== ls -la /app =="; ls -la /app; ls -la /app/code; \
-    echo "== find pyproject, lock, requirements =="; \
-    find /app -maxdepth 3 -type f \( \
-      -name "pyproject.toml" -o \
-      -name "uv.lock" -o \
-      -name "requirements.txt" -o \
-      -name "requirements*.txt" \
-    \) -print
-
 RUN --mount=type=cache,target=/root/.cache/uv \
     uv venv .venv && \
     uv sync
