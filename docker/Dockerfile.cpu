@@ -18,7 +18,7 @@ COPY . .
 
 RUN set -eux; \
     echo "== pwd =="; pwd; \
-    echo "== ls -la /app =="; ls -la /app; \
+    echo "== ls -la /app =="; ls -la /app; ls -la /app/code; \
     echo "== find pyproject, lock, requirements =="; \
     find /app -maxdepth 3 -type f \( \
       -name "pyproject.toml" -o \
